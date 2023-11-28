@@ -1,5 +1,5 @@
 
-name: CI-CD
+name: CI/CD
 on:
   push:
     branches: [ "main" ]
@@ -14,5 +14,5 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           docker build -t afnanazhar/python_auth_4 .
-          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
           docker push afnanazhar/python_auth_4
